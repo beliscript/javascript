@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      .btn {
+        @apply bg-blue-500 text-white px-2 items-center rounded;
+        font-size: 17px;
+      }
+      .btn:hover {
+        @apply bg-blue-600;
+      }
+      .btn.minus {
+        @apply bg-red-500;
+      }
+      .btn.minus:hover {
+        @apply bg-red-600;
+      }
+      .btn.reset {
+        @apply bg-gray-500;
+      }
+      .btn.reset:hover {
+        @apply bg-gray-600;
+      }
+      .btn.add {
+        @apply bg-green-500;
+      }
+      .btn.add:hover {
+        @apply bg-green-600;
+      }
+      .count {
+        @apply text-green-800 text-5xl;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w-screen h-screen flex justify-center items-center">
+      <div>
+        <div class="text-center count mb-10" id="count">1</div>
+        <div>
+          <button onclick="actionChange('-')" class="btn minus">
+            Kurang (-)
+          </button>
+          <button onclick="actionChange('?')" class="btn reset">
+            Reset (?)
+          </button>
+          <button onclick="actionChange('+')" class="btn add">
+            Tambah (+)
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function actionChange(action) {
+      const count = document.getElementById("count");
+      const currentCount = parseInt(count.innerText);
+      let newCount = 0;
+      switch (action) {
+        case "-":
+          if (currentCount > 1) {
+            newCount = currentCount - 1;
+          }
+          break;
+        case "+":
+          newCount = currentCount + 1;
+          break;
+        case "?":
+          newCount = 0;
+          break;
+      }
+      count.innerText = newCount;
+    }
+  </script>
+</html>
