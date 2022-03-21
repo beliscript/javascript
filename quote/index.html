@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      .quote {
+        @apply border shadow font-semibold p-5 rounded text-gray-700;
+        font-size: 17px;
+        width: 400px;
+      }
+      .author {
+        @apply text-gray-700 text-right italic;
+      }
+      .btn-generate {
+        @apply mt-10 bg-gray-600 text-white px-4 py-2 items-center rounded;
+      }
+      .btn-generate:hover {
+        @apply bg-gray-800;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid place-items-center place-content-center h-screen">
+      <div class="quote">
+        <div id="quote">
+          " Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Exercitationem impedit quisquam porro praesentium asperiores molestiae
+          nulla deleniti aspernatur est sint obcaecati consequuntur autem,
+          cumque quod. Ducimus deserunt dicta quod libero? "
+        </div>
+        <hr class="my-5" />
+        <div class="author">
+          <p id="author">Tyne Rendi</p>
+        </div>
+      </div>
+      <button class="btn-generate">Generate</button>
+    </div>
+  </body>
+  <script type="text/javascript" src="script.js"></script>
+</html>
